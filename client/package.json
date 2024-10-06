@@ -43,7 +43,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://geo-quest-pa0s.onrender.com",
   "devDependencies": {
     "tailwindcss": "^3.4.12"
   }
