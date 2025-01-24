@@ -5,6 +5,7 @@ import { getAllExams } from "../../../apicalls/exams";
 import { HideLoading, ShowLoading } from "../../../redux/loaderSlice";
 import PageTitle from "../../../components/PageTitle";
 import { useNavigate } from "react-router-dom";
+import Spline from '@splinetool/react-spline';
 function Home() {
   const [exams, setExams] = React.useState([]);
   const navigate = useNavigate();
@@ -32,6 +33,13 @@ function Home() {
 
   return (
     user && (
+      <>
+      <main className='w-screen h-screen'>
+          <Spline
+            scene="https://prod.spline.design/Z9eKZC4KAvXGNoXn/scene.splinecode"
+            
+            />
+        </main>
       <div className="text-center text-xl ">
         <PageTitle title={`Hi ${user.name}, Welcome to Quiz Application`} />
         <div className="divider"></div>
@@ -47,7 +55,7 @@ function Home() {
                 <button
                   className="primary-outlined-btn"
                   onClick={() => navigate(`/user/write-exam/${exam._id}`)}
-                >
+                  >
                   Start Exam
                 </button>
               </div>
@@ -56,6 +64,7 @@ function Home() {
           }
         </Row>
       </div>
+      </>
     )
   );
 }
